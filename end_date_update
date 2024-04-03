@@ -1,0 +1,56 @@
+END DATE:  This script extends a course's end date 8 or 14 days based on the TERM.
+
+(function () {
+    var startDate = data.getCourseSection().getTimeFrames().get(0).getBegin();
+    var endDate = data.getCourseSection().getTimeFrames().get(0).getEnd();
+    var termID = data.getCourseSection().getAcademicSession();
+    var re = /^\d{4}[a-zA-Z]{2}$/;   //regular expression checks for four numbers followed by two letters
+
+  //test the values for startDate, endDate and termID
+    if (startDate === null) {
+        helper.logError("Start date blank, course not created");
+        return helper.skipRecord();
+    }
+    if (termID === null) {
+        helper.logError("Missing termID, course not created");
+        return helper.skipRecord();
+    }
+    if (endDate === null) {
+        endDate = startDate.clone();
+        helper.logError("Missing endDate, set to same as startDate");
+    }
+	//let's log the values that passed the tests
+	helper.logDebug("startDate: " + startDate.toString());
+	helper.logDebug("endDate: " + endDate.toString());
+	helper.logDebug("termID: " + termID);
+
+
+    if (re.test(termID) && termID.length < 8) {
+        if (termID.length === 6) {
+          //example 2024SP
+          endDate.add(java.util.Calendar.DATE, 14);
+          helper.logDebug("Added 14 days to endDate");
+        } else {
+            // example 2024CE2
+            endDate.add(java.util.Calendar.DATE, 8);
+            helper.logDebug("Added 8 days to endDate");
+        }
+    } else {
+        endDate.add(java.util.Calendar.DATE, 8);
+        helper.logWarning("Invalid termID format. Added 8 days to endDate");
+    }
+
+
+    //true up the hours, min, sec to the end of the day
+    endDate.set(java.util.Calendar.HOUR_OF_DAY, 23);
+    endDate.set(java.util.Calendar.MINUTE, 59);
+    endDate.set(java.util.Calendar.SECOND, 59);
+    
+    //log the result
+    helper.logDebug("Setting the endDate to :" + endDate.toString);
+    return endDate;
+})();
+
+
+
+
