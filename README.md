@@ -1,5 +1,6 @@
 # mapping_scripts
-SIS Framework Field Mapping Scripts
+SIS Framework Field Mapping Scripts<br>
+These are provided without support or warranty.
 
 Just a few sample mapping scripts based on working with some customers.</br>
 Sample LIS formatted files:  https://github.com/blackboard/bbdn-lis_samples</br>
