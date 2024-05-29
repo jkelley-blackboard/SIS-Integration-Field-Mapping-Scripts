@@ -1,45 +1,46 @@
-END DATE:  This script extends a course's end date 8 or 14 days based on the TERM.
-
 (function () {
-    var startDate = data.getCourseSection().getTimeFrames().get(0).getBegin();
-    var endDate = data.getCourseSection().getTimeFrames().get(0).getEnd();
-    var termID = data.getCourseSection().getAcademicSession();
-    var re = /^\d{4}[a-zA-Z]{2}$/;   //regular expression checks for four numbers followed by two letters
+	//This script extends a course's end date 8 or 14 days based on the TERM format.
 
-  //test the values for startDate, endDate and termID
-    if (startDate === null) {
-        helper.logError("Start date blank, course not created");
+  //prefix for logging
+	sField = "End Date: ";
+
+
+  //get and test the values for startDate, endDate and termID
+    var startDate = data.getCourseSection().getTimeFrames().get(0).getBegin();
+	if (startDate === null) {
+        helper.logError(sField + "Start date blank, course not created");
         return helper.skipRecord();
     }
+
+    var termID = data.getCourseSection().getAcademicSession();
     if (termID === null) {
-        helper.logError("Missing termID, course not created");
+        helper.logError(sField + "Missing termID, course not created");
         return helper.skipRecord();
     }
+
+    var endDate = data.getCourseSection().getTimeFrames().get(0).getEnd();
     if (endDate === null) {
         endDate = startDate.clone();
-        helper.logError("Missing endDate, set to same as startDate");
+        helper.logWarning(sField + "Missing endDate, set to same as startDate");
     }
-	//let's log the values that passed the tests
-	helper.logDebug("startDate: " + startDate.toString());
-	helper.logDebug("endDate: " + endDate.toString());
-	helper.logDebug("termID: " + termID);
 
+  //regular expression checks for four numbers followed by two letters
+    var re = /^\d{4}[a-zA-Z]{2}$/;
 
     if (re.test(termID) && termID.length < 8) {
         if (termID.length === 6) {
           //example 2024SP
           endDate.add(java.util.Calendar.DATE, 14);
-          helper.logDebug("Added 14 days to endDate");
+          helper.logInfo(sField + "Added 14 days to endDate");
         } else {
             // example 2024CE2
             endDate.add(java.util.Calendar.DATE, 8);
-            helper.logDebug("Added 8 days to endDate");
+            helper.logInfo(sField + "Added 8 days to endDate");
         }
     } else {
         endDate.add(java.util.Calendar.DATE, 8);
-        helper.logWarning("Invalid termID format. Added 8 days to endDate");
+        helper.logWarning(sField + "Invalid termID format. Added 8 days to endDate");
     }
-
 
     //true up the hours, min, sec to the end of the day
     endDate.set(java.util.Calendar.HOUR_OF_DAY, 23);
@@ -47,10 +48,6 @@ END DATE:  This script extends a course's end date 8 or 14 days based on the TER
     endDate.set(java.util.Calendar.SECOND, 59);
     
     //log the result
-    helper.logDebug("Setting the endDate to :" + endDate.toString);
+    helper.logInfo("Setting the endDate to :" + endDate.toString);
     return endDate;
 })();
-
-
-
-
