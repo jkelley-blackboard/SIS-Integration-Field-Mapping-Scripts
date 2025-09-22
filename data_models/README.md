@@ -1,6 +1,6 @@
 # Blackboard SIS Custom Field Mapping Reference
 
-This document provides examples of how to access data fields in Blackboard SIS custom mapping scripts using the Java Map syntax.
+This document provides **not entirely tested** examples of how to access data fields in Blackboard SIS custom mapping scripts using the Java Map syntax.
 
 ---
 
