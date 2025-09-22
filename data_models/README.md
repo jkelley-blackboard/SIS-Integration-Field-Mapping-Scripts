@@ -5,40 +5,49 @@ This document provides examples of how to access data fields in Blackboard SIS c
 ---
 
 ## 1. Person
-**TBD**
 
-This section will cover how to access and manipulate **Person** (user) fields such as:
-- Names
-- Emails
-- Roles
-- External IDs
+| Blackboard Field                      | Java Map Syntax                                             |
+|----------------------------------------|-------------------------------------------------------------|
+| External Person Key / Batch UID        | `data.getPerson().getSourcedGUID().getSourcedId()`          |
+| Username / User ID                     | `data.getPerson().getUserName()`                            |
+| First Name                             | `data.getPerson().getName().getGivenName()`                 |
+| Last Name                              | `data.getPerson().getName().getFamilyName()`               |
+| Email Address                          | `data.getPerson().getEmail()`                              |
+| Institution Role                        | `data.getPerson().getRoles().getPrimaryInstitutionRole().getValue()` |
+| Secondary Institution Roles             | `data.getPerson().getRoles().getSecondaryInstitutionRoles()` **(TBD)** |
+| Extensions (pronouns, etc.)             | `data.getPerson().getExtensions().get('fieldName')` **(TBD)** |
 
 ---
 
 ## 2. Course Section
-**TBD**
 
-This section will describe how to work with **Course Sections**, including:
-- Course name and ID
-- Catalog information
-- Dates and availability
-- Data source mapping
+| Blackboard Field                               | Java Map Syntax                                                  |
+|------------------------------------------------|------------------------------------------------------------------|
+| External Course Key / Course Section SourcedId | `data.getCourseSection().getSourcedGUID().getSourcedId()`        |
+| Course Section Title / Name                     | `data.getCourseSection().getTitle()`                             |
+| Description / Catalog Description             | `data.getCourseSection().getCatalogDescription().getLongDescription()` **or** `.getShortDescription()` if available |
+| Data Source                                     | `data.getCourseSection().getDataSource()`                        |
+| Start Date                                      | `data.getCourseSection().getStartDate()`                         |
+| End Date                                        | `data.getCourseSection().getEndDate()`                           |
+| Term / Academic Session                         | `data.getCourseSection().getAcademicSession()` **(TBD)**          |
+| Available Flag / Is Available                   | `data.getCourseSection().getIsAvailable()` **(TBD)**              |
 
 ---
 
 ## 3. Course Membership
-**TBD**
 
-This section will provide details on **Course Membership** objects, which link persons to course sections:
-- Roles (student, instructor, etc.)
-- Availability
-- Enrollment statuses
+| Blackboard Field                        | Java Map Syntax                                                         |
+|-----------------------------------------|-------------------------------------------------------------------------|
+| External Course Key / Course Section Id | `data.getMembership().getCourseSection().getSourcedGUID().getSourcedId()` **(or similar)** |
+| External Person Key / User Id           | `data.getMembership().getPerson().getSourcedGUID().getSourcedId()`      |
+| Role in Course (Student / Instructor)   | `data.getMembership().getRole()`                                        |
+| Enrollment Date                          | `data.getMembership().getEnrollmentDate()`                              |
+| Availability / Is Available             | `data.getMembership().getIsAvailable()` **(TBD)**                       |
+| Data Source                              | `data.getMembership().getDataSource()`                                 |
 
 ---
 
 ## 4. Term (Group Record)
-
-This section covers **Term records**, which are represented as `groupRecord` objects in SIS integration scripts.
 
 | Blackboard Field                        | Java Map Syntax                                          |
 | --------------------------------------- | -------------------------------------------------------- |
@@ -47,24 +56,3 @@ This section covers **Term records**, which are represented as `groupRecord` obj
 | Term End Date (`<timeframe><end>`)      | `data.getGroup().getTimeframe().getEnd()`                |
 | Sourced ID (`<sourcedGUID><sourcedId>`) | `data.getSourcedGUID().getSourcedId()`                   |
 | Data Source                             | `data.getGroup().getDataSource()`                        |
-
-### Example XML Source for Term
-
-```xml
-<groupRecord>
-  <sourcedGUID>
-    <refAgentInstanceID>ID</refAgentInstanceID>
-    <sourcedId>fall_2025</sourcedId>
-  </sourcedGUID>
-  <group>
-    <timeframe>
-      <begin>2025-08-15</begin>
-      <end>2025-12-20</end>
-      <restrict>true</restrict>
-    </timeframe>
-    <description>
-      <shortDescription>Fall 2025</shortDescription>
-    </description>
-    <dataSource>LMS_IMPORT</dataSource>
-  </group>
-</groupRecord>
