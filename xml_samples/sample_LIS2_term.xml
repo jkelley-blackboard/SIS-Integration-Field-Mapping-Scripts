@@ -1,0 +1,63 @@
+<groupRecord xmlns:gms="http://www.imsglobal.org/services/lis/gms2p0/wsdl11/sync/imsgms_v2p0">
+            <sourcedGUID>
+                <refAgentInstanceID>ID</refAgentInstanceID>
+                <sourcedId>test_term</sourcedId> 						<!-- sourcedid.id (there is no batch_uid for TERMs) -->
+            </sourcedGUID>
+            <group>
+                <groupType>
+                    <scheme>
+                        <language>en_US</language>
+                        <textString>LIS2.0</textString>
+                    </scheme>
+                    <typevalue>
+                        <id>ValueId</id>
+                        <type>
+                            <language>en_US</language>
+                            <textString>TERM</textString>    			<!-- typevalue explaining this is a TERM, same as legacy XML -->
+                        </type>
+                        <level>
+                            <language>en_US</language>
+                            <textString>1</textString>
+                        </level>
+                    </typevalue>
+                </groupType>
+                <email>test@example.com</email>
+                <url>http://www.example.com</url>
+                <timeframe>
+                    <begin>2012-01-16</begin> 							<!-- Term Begin Date -->
+                    <end>2015-05-10</end>  								<!-- Term End Date -->
+                    <restrict>true</restrict> 							<!-- true = Use Dates; false = Continuous -->
+                    <adminPeriod>
+                        <language>en_US</language>
+                        <textString>admin_period_babble</textString> 	<!-- IGNORED by Learn -->
+                    </adminPeriod>
+                </timeframe>
+                <relationship>
+                    <relationId>RelationId</relationId>
+                    <relation>Parent</relation>
+                    <sourcedId>sourcedID_Babble2</sourcedId>
+                    <label>
+                        <language>en_US</language>
+                        <textString>Label</textString>
+                    </label>
+                </relationship>
+                <enrollControl>
+                    <enrollAccept>true</enrollAccept>
+                    <enrollAllowed>false</enrollAllowed>
+                </enrollControl>
+                <description>
+                    <shortDescription>test_term</shortDescription> 				<!-- Term Name -->
+                    <longDescription>Long Description Babble</longDescription>  <!-- IGNORED by Learn (no way to get Description filled out in GUI)-->
+                </description> 
+                <dataSource>DataSourceBabble</dataSource> 
+                <recordInfo> 
+                    <metadataNameVocabulary>Test</metadataNameVocabulary> 
+                    <metadataTypeVocabulary>Test</metadataTypeVocabulary> 
+                    <metadataField> 
+                        <fieldName>infoName</fieldName> 
+                        <fieldType>String</fieldType> 
+                        <fieldValue>infoValue</fieldValue> 
+                    </metadataField> 
+                </recordInfo> 
+            </group> 
+      </groupRecord>
