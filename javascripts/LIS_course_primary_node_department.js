@@ -1,6 +1,7 @@
 (function() {
     // Blackboard SIS Mapping Script
     // Purpose: Assign course to primary department node
+	// You will also need a script for the Primary Association Batch Uid field.
 
     var sField = 'Primary Node Batch Uid Script ';  // Logging prefix
 
