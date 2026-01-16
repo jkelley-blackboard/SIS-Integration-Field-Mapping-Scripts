@@ -1,0 +1,65 @@
+<replaceCourseSectionRequest xmlns="http://www.imsglobal.org/services/lis/cmsv1p0/wsdl11/sync/imscms_v1p0">
+  <sourcedId>123456-202610</sourcedId>
+  <courseSectionRecord>
+    <sourcedGUID><sourcedId>123456-202610</sourcedId></sourcedGUID>
+    <courseSection>
+      <label>
+		<language>en-US</language>
+		<textString>123456.202610</textString>
+	  </label>
+      <title>
+		<language>en-US</language>
+		<textString>PSY262: Mindfulness for Students
+		</textString>
+	  </title>
+      <category>
+		<language>en-US</language>
+		<textString>2026 Spring</textString>
+	  </category>
+      <academicSession>
+		<language>en-US</language>
+		<textString>202610</textString>
+	  </academicSession>
+      <dataSource>ILP</dataSource>
+      <status>Inactive</status>
+      <catalogDescription>
+        <longDescription>
+			<language>en-US</language>
+			<textString>This course introduces mindfulness as a practical skill for navigating academic pressures and the demands of student life. Students gain an understanding of stress, stress management, and emotional resilience, and learn how to respond to challenges with greater ease, compassion, and self-awareness. Foundational concepts are paired with mindfulness practices that encourage reflection and personal insight. Mindfulness is an awareness-based practice with roots in Buddhism.</textString>
+		</longDescription>
+        <shortDescription>
+			<language>en-US</language>
+			<textString>This course teaches mindfulness as a practical way to manage stress and navigate academic and personal challenges, building emotional resilience through theory and reflective practice.</textString>
+		</shortDescription>
+      </catalogDescription>
+	  <parentOfferingId>PSY-262</parentOfferingId>
+      <defaultCredits>
+		<language>en-US</language>
+		<textString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+	  </defaultCredits>
+      <location>
+		<language>en-US</language>
+		<textString>Springfield Campus</textString>
+	  </location>
+      <maxNumberofStudents>18</maxNumberofStudents>
+      <org>
+        <orgName>
+			<language>en-US</language>
+			<textString>Psychology</textString>
+		</orgName>
+        <orgUnit>
+			<language>en-US</language>
+			<textString>PSY</textString>
+		</orgUnit>
+        <id>
+			<language>en-US</language>
+			<textString>0265</textString>
+		</id>
+      </org>
+      <timeFrame>
+		<begin>2026-01-09T05:00:00Z</begin>
+		<end>2026-05-24T03:59:59Z</end>
+	  </timeFrame>
+    </courseSection>
+  </courseSectionRecord>
+</replaceCourseSectionRequest>
