@@ -1,12 +1,5 @@
-Yes — I can convert this into **clean, elegant, modern Markdown** suitable for documentation or a README.  
-Below is a **faithful Markdown rewrite** of the HTML you uploaded, with:
-
-*   Clear heading hierarchy
-*   Proper fenced code blocks
-*   Inline code formatting
-*   Clean lists
-*   Removed legacy styling/CSS
-*   Preserved examples and intent
+Note - this content is availble IN Blackboard on each deployment.
+/webapps/dataIntegration/docs/custom_script_examples.html
 
 ***
 
@@ -303,15 +296,3 @@ if (data.name == null) {
 ***
 
 © 2011 Blackboard Inc. Proprietary and Confidential.
-
-***
-
-If you want, I can also:
-
-*   Split this into **multiple Markdown files**
-*   Convert to **GitHub‑style docs**
-*   Generate a **TOC**
-*   Clean up Java ↔ JS inconsistencies
-*   Normalize examples for **modern Blackboard / SaaS**
-
-Just tell me the target format or platform.
