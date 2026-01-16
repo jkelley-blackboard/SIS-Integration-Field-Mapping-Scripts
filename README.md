@@ -45,6 +45,7 @@ Comment each major section of the script. Explain *why* logic exists, not just *
 ## 2. Use Helper Functions for Logging
 
 Leverage the provided helper functions to report success, failure, and transformation details to the SIS integration logs.
+Learn more about helpers on [custom_scripting_help.md](https://github.com/jkelley-blackboard/SIS-Integration-Field-Mapping-Scripts/blob/main/custom_scripting_help.md)
 
 Benefits:
 - Clear visibility into script execution
