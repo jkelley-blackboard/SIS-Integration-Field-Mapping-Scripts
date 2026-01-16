@@ -1,25 +1,20 @@
 (function() {
     // Blackboard SIS Mapping Script
-    // Purpose: Update the term name (shortDescription) by adding a "LIT " prefix
+    // Purpose: Assign course to primary department node
 
-    var sField = 'Term Name Prefix Script: ';  // Logging prefix
+    var sField = 'Primary Node Batch Uid Script ';  // Logging prefix
 
-    // 1. Get the existing term name
-    var termNameObj = data.getGroup().getDescription().getShortDescription();
+    //Get department code
+    var dept = data.courseSection.org.id;
 
-    if (!termNameObj) {
-        helper.logWarning(sField + 'Term name not found. Skipping record.');
-        helper.skipRecord();
-        return; // Exit if there's no term name
+    //Error handle
+	if (!dept) {
+        helper.logWarning(sField + 'Department code not found.');
+        return; // Exit if there's no department code
     }
+	
+    helper.logInfo(sField + 'Department code = ' + dept);
 
-    var termName = termNameObj.trim();
-
-    // 2. Prefix with "LIT "
-    var newTermName = 'LIT ' + termName;
-
-    helper.logInfo(sField + 'Original term name: ' + termName + ' | Updated term name: ' + newTermName);
-
-    // 3. Return the updated term name
-    return newTermName;
+    //Return the department code
+    return dept;
 })();
