@@ -13,6 +13,6 @@ See the [LICENSE](LICENSE) file for license details.
 
 ### Useful Links
 - [Sample LIS formatted files](https://github.com/blackboard/bbdn-lis_samples)
-- [Blackboard LIS SIS Integration Documentation](https://help.blackboard.com/Learn/Administrator/SaaS/Integrations/Student_Information_System/SIS_Integration_Types/LIS)
+- [Help page on scripting](https://help.anthology.com/test-blackboard-administrator/en/integrations/student-information-system--sis-/snapshot-flat-file/snapshot-flat-file-custom-field-mapping.html)
 - [RHINO 1.7.13 Info](https://p-bakker.github.io/rhino/releases/new_in_rhino_1.7.13.html)
 - [RHINO Engine Compatibility](https://mozilla.github.io/rhino/compat/engines.html)
