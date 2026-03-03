@@ -1,8 +1,6 @@
 
 # **Ellucian ILP → Blackboard Learn**  
 ## **IMS LIS Course → Department (Node) Association Guide**  
-### **Updated with `=` concatenation and reversed order (`courseSourcedId=deptId`)**
-
 ---
 
 ## **1) Overview & Assumptions**
@@ -100,7 +98,7 @@ The recomended format is:
 Example:
 
 ```
-123456.20260510=0256
+123456.202610=0256
 ```
 
 ### ✔ Updated script
