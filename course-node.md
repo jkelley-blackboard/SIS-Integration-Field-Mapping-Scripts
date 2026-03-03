@@ -101,7 +101,7 @@ Example:
 123456.202610=0256
 ```
 
-### ✔ Updated script
+### Example Script
 
 ```javascript
 (function () {
@@ -155,19 +155,6 @@ If your institution frequently uses secondary nodes, handle them via **Snapshot 
 - **Keep node IDs consistent** — ensure Blackboard node external IDs match ILP `<org.id>` or `<orgUnit>` values.
 
 ---
-
-## **5) Validation Checklist**
-
-- [ ] Blackboard node external IDs match ILP’s `org.id` or `orgUnit`  
-- [ ] `primary_external_node_key` script returns the correct department value  
-- [ ] `external_association_key` uses the updated pattern: `courseSourcedId=deptId`  
-- [ ] No duplicate association keys exist  
-- [ ] Term mappings (if used) exist in Blackboard before courses arrive  
-- [ ] Secondary nodes only used if absolutely needed (and returned as arrays)
-
----
-
-## **6) GitHub References (Full Paths)**
 
 - **ILP LIS Course Section XML Sample**  
   🔗 https://github.com/jkelley-blackboard/SIS-Integration-Field-Mapping-Scripts/blob/main/xml_samples/ILP_LIS_course_section.xml
