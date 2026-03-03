@@ -88,7 +88,7 @@ The logic is the same as snapshot
 #### Primary Node Fields
 - `primary_external_node_key` — The "Identifier" for the primary node.
 - `external_association_key` — Unique identifier for this association.
-#### Mapping
+#### 
 
 
 
