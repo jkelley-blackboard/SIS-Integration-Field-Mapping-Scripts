@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  <title>Observer Association – Snapshot Flat File Headers</title>
+  <link rel='stylesheet' href='../style.css'/>
+  <script>
+  function filterTable(e){
+    const q = e.value.toLowerCase();
+    for (const row of document.querySelectorAll('tbody tr')){
+      row.classList.toggle('hidden', !row.innerText.toLowerCase().includes(q));
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <nav class='breadcrumb'><a href='../index.html'>Home</a> / Observer Association</nav>
+    <h1>Observer Association</h1>
+    <p class='small'>Snapshot Flat File Header Descriptions (reference)</p>
+  </header>
+  <main>
+    <p>Associate an observer user to a target user.</p>
+    <div class='search'><input oninput='filterTable(this)' placeholder='Search fields, headers, values…'/></div>
+    <div class='table-wrapper'><table><thead><tr><th>Field</th><th>Header</th><th>Required</th><th>Unique</th><th>Max Length</th><th>Supported Values</th><th>Format</th><th>Description</th></tr></thead><tbody><tr><td>Data Source Key</td><td><span class='code'>data_source_key</span></td><td>Yes</td><td>No</td><td></td><td></td><td></td><td>Grouping key.</td></tr><tr><td>User Key</td><td><span class='code'>external_user_key</span></td><td>Yes</td><td>No</td><td>64</td><td></td><td></td><td>Target user.</td></tr><tr><td>Observer Key</td><td><span class='code'>external_observer_key</span></td><td>Yes</td><td>No</td><td>64</td><td></td><td></td><td>Observer user key.</td></tr><tr><td>Replacement Data Source Key</td><td><span class='code'>new_data_source_key</span></td><td>No</td><td>No</td><td></td><td></td><td></td><td>Move association to different data source.</td></tr><tr><td>Row Status</td><td><span class='code'>row_status</span></td><td>No</td><td>No</td><td></td><td>enabled, disabled, deleted</td><td></td><td>Lifecycle state.</td></tr></tbody></table></div>
+    <p class='small'>Source: Anthology Blackboard Help – Snapshot Flat File Header Descriptions & related Snapshot docs.</p>
+  </main>
+  <footer>© 2026</footer>
+</body>
+</html>
