@@ -137,3 +137,13 @@ notes:
   - >
     Term availability controls associated course availability when the term's
     available_ind is set to N.
+  - >
+    UPCOMING (4000.15, production 7 May 2026) — Term Type: confirmed in release
+    notes for flat file sync. Feed header and supported values not yet published;
+    field exists in data model and is visible in field mapping UI on staging.
+    Do not use in production feeds until header is confirmed.
+  - >
+    UPCOMING (SIS date unannounced) — Term Hierarchy: parent-child terms (Annual
+    → Semester etc.) shipped as UI-only in 4000.8. No feed header or field
+    mapping target exists on any confirmed system. Expected to follow standard
+    UI → SIS → REST progression. Do not use in production feeds.

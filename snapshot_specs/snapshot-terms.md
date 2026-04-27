@@ -63,3 +63,6 @@ TERM-F25|SIS-IMPORT-2025|Fall 2025|Y|Range|20250825|20251215|enabled
 
 - **`external_term_key`** may contain only letters, digits, dashes, and periods. No spaces or other punctuation.
 - **Term availability** controls associated course availability when the term's `available_ind` is set to `N`.
+- **Term Type (shipping 4000.15, production 7 May 2026):** The 4000.15 release note confirms Term Type sync via flat file integration. As of this writing the feed header and supported values are not published and the field does not appear in the custom header override list. The underlying database field exists and is visible as a mappable target in the field mapping UI on 4000.15 staging.
+
+**Term Hierarchy / Parent Term (UI: 4000.8, SIS: not yet announced):** Parent-child term relationships (Annual → Semester/Trimester/Quarter) shipped as a UI-only feature in 4000.8. No release note has announced SIS or REST support. The underlying field exists in the data model but no feed header or field mapping target row exists on any confirmed system. SIS support is expected in a future release 
